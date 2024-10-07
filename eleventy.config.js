@@ -2,7 +2,7 @@ import { IdAttributePlugin, InputPathToUrlTransformPlugin, HtmlBasePlugin } from
 import { feedPlugin } from "@11ty/eleventy-plugin-rss";
 import pluginSyntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 import pluginNavigation from "@11ty/eleventy-navigation";
-import { eleventyImageTransformPlugin } from "./node_modules/@11ty/eleventy-img";
+import { eleventyImageTransformPlugin } from "./node_modules/@11ty/eleventy-img/img.js";
 
 import pluginFilters from "./_config/filters.js";
 
