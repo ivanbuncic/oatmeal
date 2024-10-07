@@ -1,5 +1,5 @@
 import { IdAttributePlugin, InputPathToUrlTransformPlugin, HtmlBasePlugin } from "./node_modules/@11ty/eleventy/src/Eleventy.js";
-import { feedPlugin } from "./node_modules/@11ty/eleventy-plugin-rss/src/rssFeed.js";
+// import { feedPlugin } from "./node_modules/@11ty/eleventy-plugin-rss/src/rssFeed.js";
 import pluginSyntaxHighlight from "./node_modules/@11ty/eleventy-plugin-syntaxhighlight/src/eleventy-plugin-syntaxhighlight.js";
 import pluginNavigation from "./node_modules/@11ty/eleventy-navigation/eleventy-navigation.js";
 import { eleventyImageTransformPlugin } from "./node_modules/@11ty/eleventy-img/img.js";
@@ -47,30 +47,30 @@ export default async function(eleventyConfig) {
 	eleventyConfig.addPlugin(HtmlBasePlugin);
 	eleventyConfig.addPlugin(InputPathToUrlTransformPlugin);
 
-	eleventyConfig.addPlugin(feedPlugin, {
-		type: "atom", // or "rss", "json"
-		outputPath: "/feed/feed.xml",
-		stylesheet: "pretty-atom-feed.xsl",
-		templateData: {
-			eleventyNavigation: {
-				key: "Feed",
-				order: 4
-			}
-		},
-		collection: {
-			name: "posts",
-			limit: 10,
-		},
-		metadata: {
-			language: "en",
-			title: "Blog Title",
-			subtitle: "This is a longer description about your blog.",
-			base: "https://example.com/",
-			author: {
-				name: "Your Name"
-			}
-		}
-	});
+	// eleventyConfig.addPlugin(feedPlugin, {
+	// 	type: "atom", // or "rss", "json"
+	// 	outputPath: "/feed/feed.xml",
+	// 	stylesheet: "pretty-atom-feed.xsl",
+	// 	templateData: {
+	// 		eleventyNavigation: {
+	// 			key: "Feed",
+	// 			order: 4
+	// 		}
+	// 	},
+	// 	collection: {
+	// 		name: "posts",
+	// 		limit: 10,
+	// 	},
+	// 	metadata: {
+	// 		language: "en",
+	// 		title: "Blog Title",
+	// 		subtitle: "This is a longer description about your blog.",
+	// 		base: "https://example.com/",
+	// 		author: {
+	// 			name: "Your Name"
+	// 		}
+	// 	}
+	// });
 
 	// Image optimization: https://www.11ty.dev/docs/plugins/image/#eleventy-transform
 	eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
