@@ -4,6 +4,21 @@
 <meta charset="UTF-8">
 <title>The Ultimate Porridge Recipe</title>
 <style>
+html {
+    font-size: 18px;
+}
+
+@media screen and (min-width: 320px) {
+  html {
+    font-size: calc(18px + 12 * ((100vw - 320px) / 680));
+  }
+}
+@media screen and (min-width: 1000px) {
+  html {
+    font-size: 28px;
+  }
+}
+    
 body {
     margin: 0;
     padding: 0;
@@ -12,27 +27,29 @@ body {
 }
 
 main {
-    max-width: 800px;
+    max-width: 960px;
+    min-width: 380px;
     margin: 40px auto;
     padding: 40px;
     background-color: #ffffff;
     border: 4px solid #000000;
     box-shadow: 12px 12px 0 0 #000000;
     text-align: left;
+    box-sizing: border-box;
 }
 
 h1 {
-    font-size: 64px;
+    font-size: 45px;
     margin-bottom: 20px;
 }
 
 h2 {
-    font-size: 48px;
+    font-size: 32px;
     margin-bottom: 15px;
 }
 
 h3 {
-    font-size: 36px;
+    font-size: 28px;
     margin-bottom: 10px;
 }
 
