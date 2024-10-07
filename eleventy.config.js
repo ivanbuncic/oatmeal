@@ -1,8 +1,8 @@
 import { IdAttributePlugin, InputPathToUrlTransformPlugin, HtmlBasePlugin } from "./node_modules/@11ty/eleventy/src/Eleventy.js";
 // import { feedPlugin } from "./node_modules/@11ty/eleventy-plugin-rss/src/rssFeed.js";
-import pluginSyntaxHighlight from "./node_modules/@11ty/eleventy-plugin-syntaxhighlight/src/eleventy-plugin-syntaxhighlight.js";
+// import pluginSyntaxHighlight from "./node_modules/@11ty/eleventy-plugin-syntaxhighlight/src/eleventy-plugin-syntaxhighlight.js";
 import pluginNavigation from "./node_modules/@11ty/eleventy-navigation/eleventy-navigation.js";
-import { eleventyImageTransformPlugin } from "./node_modules/@11ty/eleventy-img/img.js";
+// import { eleventyImageTransformPlugin } from "./node_modules/@11ty/eleventy-img/img.js";
 
 import pluginFilters from "./_config/filters.js";
 
@@ -40,9 +40,9 @@ export default async function(eleventyConfig) {
 	});
 
 	// Official plugins
-	eleventyConfig.addPlugin(pluginSyntaxHighlight, {
-		preAttributes: { tabindex: 0 }
-	});
+	// eleventyConfig.addPlugin(pluginSyntaxHighlight, {
+	// 	preAttributes: { tabindex: 0 }
+	// });
 	eleventyConfig.addPlugin(pluginNavigation);
 	eleventyConfig.addPlugin(HtmlBasePlugin);
 	eleventyConfig.addPlugin(InputPathToUrlTransformPlugin);
@@ -73,21 +73,21 @@ export default async function(eleventyConfig) {
 	// });
 
 	// Image optimization: https://www.11ty.dev/docs/plugins/image/#eleventy-transform
-	eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
-		// File extensions to process in _site folder
-		extensions: "html",
+	// eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
+	// 	// File extensions to process in _site folder
+	// 	extensions: "html",
 
-		// Output formats for each image.
-		formats: ["avif", "webp", "auto"],
+	// 	// Output formats for each image.
+	// 	formats: ["avif", "webp", "auto"],
 
-		// widths: ["auto"],
+	// 	// widths: ["auto"],
 
-		defaultAttributes: {
-			// e.g. <img loading decoding> assigned on the HTML tag will override these values.
-			loading: "lazy",
-			decoding: "async",
-		}
-	});
+	// 	defaultAttributes: {
+	// 		// e.g. <img loading decoding> assigned on the HTML tag will override these values.
+	// 		loading: "lazy",
+	// 		decoding: "async",
+	// 	}
+	// });
 
 	// Filters
 	eleventyConfig.addPlugin(pluginFilters);
