@@ -1,12 +1,12 @@
-import { IdAttributePlugin, InputPathToUrlTransformPlugin, HtmlBasePlugin } from "@11ty/eleventy";
-import { feedPlugin } from "@11ty/eleventy-plugin-rss";
-import pluginSyntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
-import pluginNavigation from "@11ty/eleventy-navigation";
+import { IdAttributePlugin, InputPathToUrlTransformPlugin, HtmlBasePlugin } from "./node_modules/@11ty/eleventy/src/eleventy.js";
+import { feedPlugin } from "./node_modules/@11ty/eleventy-plugin-rss/feed.js";
+import pluginSyntaxHighlight from "./node_modules/@11ty/eleventy-plugin-syntaxhighlight/src/eleventy-plugin-syntaxhighlight.js";
+import pluginNavigation from "./node_modules/@11ty/eleventy-navigation/eleventy-navigation.js";
 import { eleventyImageTransformPlugin } from "./node_modules/@11ty/eleventy-img/img.js";
 
 import pluginFilters from "./_config/filters.js";
 
-/** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
+/** @param {import("./node_modules/@11ty/eleventy/src/eleventy.js").UserConfig} eleventyConfig */
 export default async function(eleventyConfig) {
 	// Drafts, see also _data/eleventyDataSchema.js
 	eleventyConfig.addPreprocessor("drafts", "*", (data, content) => {
